@@ -7,8 +7,8 @@ plugins {
 	id 'net.researchgate.release' version '2.8.1'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+group = group
+version = version
 sourceCompatibility = '11'
 
 repositories {
@@ -25,6 +25,7 @@ test {
 }
 release {
 	failOnUnversionedFiles = false
+	tagTemplate = 'v${version}'
 	versionPatterns = [
 			/(\d+)([^\d]*$)/: { Matcher m, Project p -> m.replaceAll("${(m[0][1] as int) + 1}${m[0][2]}") }
 	]
