@@ -8,7 +8,7 @@ plugins {
 }
 
 group = group
-version = version
+version = VERSION_NUMBER
 sourceCompatibility = '11'
 
 repositories {
