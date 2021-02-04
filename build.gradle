@@ -8,7 +8,7 @@ plugins {
 }
 
 group = group
-version = VERSION_NUMBER
+version = version
 sourceCompatibility = '11'
 
 repositories {
@@ -25,10 +25,7 @@ test {
 }
 release {
 	failOnUnversionedFiles = false
-	tagTemplate = '${VERSION_NUMBER}'
-	versionPatterns = [
-			/(\d+)([^\d]*$)/: { Matcher m, Project p -> m.replaceAll("${(m[0][1] as int) + 1}${m[0][2]}") }
-	]
+	tagTemplate = 'v${version}'
 	git {
 		requireBranch = 'main'
 		pushToRemote = 'origin'
