@@ -1,5 +1,3 @@
-import java.util.regex.Matcher
-
 plugins {
 	id 'org.springframework.boot' version '2.4.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -8,7 +6,7 @@ plugins {
 }
 
 group = group
-version = version
+version = ${DP_VERSION_NUMBER}
 sourceCompatibility = '11'
 
 repositories {
@@ -25,7 +23,7 @@ test {
 }
 release {
 	failOnUnversionedFiles = false
-	tagTemplate = 'v${version}'
+	tagTemplate = 'v${DP_VERSION_NUMBER}'
 	git {
 		requireBranch = 'main'
 		pushToRemote = 'origin'
