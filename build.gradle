@@ -6,7 +6,7 @@ plugins {
 }
 
 group = group
-version = ${DP_VERSION_NUMBER}
+version = version
 sourceCompatibility = '11'
 
 repositories {
@@ -23,7 +23,7 @@ test {
 }
 release {
 	failOnUnversionedFiles = false
-	tagTemplate = 'v${DP_VERSION_NUMBER}'
+	tagTemplate = 'v${version}'
 	git {
 		requireBranch = 'main'
 		pushToRemote = 'origin'
