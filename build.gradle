@@ -21,9 +21,12 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
 release {
 	failOnUnversionedFiles = false
-	tagTemplate = 'v${version}'
+	tagTemplate = '${version}'
+	preTagCommitMessage = 'Changed version number to '
+	newVersionCommitMessage = 'Changed version number to '
 	git {
 		requireBranch = 'main'
 		pushToRemote = 'origin'
